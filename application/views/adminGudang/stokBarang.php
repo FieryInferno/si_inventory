@@ -31,6 +31,10 @@
                   <th>Kategori</th>
                   <th>QTY</th>
                   <th>Satuan</th>
+                  <th>Created Date</th>
+                  <th>Created By</th>
+                  <th>Modify Date</th>
+                  <th>Modify By</th>
                   <th>Aksi</th>
                 </tr>   
               </thead>
@@ -45,6 +49,10 @@
                       <td><?= $key['kategori']; ?></td>
                       <td><?= $key['qty']; ?></td>
                       <td><?= $key['satuan']; ?></td>
+                      <td><?= $key['created_date']; ?></td>
+                      <td><?= $key['user_create']; ?></td>
+                      <td><?= $key['modify_date']; ?></td>
+                      <td><?= $key['user_modify']; ?></td>
                       <td>
                         <a class="btn btn-primary" href="<?= base_url('admin_gudang/stok_barang/edit/' . $key['id_barang']); ?>">Edit</a>
                         <a class="btn btn-danger" href="<?= base_url('admin_gudang/stok_barang/hapus/' . $key['id_barang']); ?>">Hapus</a>
