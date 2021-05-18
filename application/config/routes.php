@@ -16,3 +16,4 @@ $route['admin_gudang/stok_barang.html']             = 'adminGudang/Barang';
 $route['admin_gudang/stok_barang/tambah.html']      = 'adminGudang/Barang/tambah';
 $route['admin_gudang/stok_barang/edit/(:any)']      = 'adminGudang/Barang/edit/$1';
 $route['admin_gudang/stok_barang/hapus/(:any)']     = 'adminGudang/Barang/hapus/$1';
+$route['admin_gudang/barang_masuk.html']            = 'adminGudang/BarangMasuk';
