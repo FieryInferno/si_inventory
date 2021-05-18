@@ -6,3 +6,7 @@ $route['404_override']          = '';
 $route['translate_uri_dashes']  = FALSE;
 
 $route['login.html']  = 'login';
+$route['logout.html'] = 'logout';
+
+$route['admin_gudang.html']                 = 'adminGudang/adminGudang';
+$route['admin_gudang/manajemen_user.html']  = 'adminGudang/User';

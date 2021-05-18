@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2021 pada 12.39
+-- Waktu pembuatan: 18 Bulan Mei 2021 pada 14.55
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 7.2.5
 
@@ -33,6 +33,8 @@ CREATE TABLE `user` (
   `username` varchar(191) NOT NULL,
   `password` varchar(191) NOT NULL,
   `role` enum('admin_gudang','manager') NOT NULL,
+  `namaLengkap` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
   `created_date` date DEFAULT NULL,
   `modify_date` date DEFAULT NULL,
   `created_by` varchar(191) DEFAULT NULL,
@@ -43,8 +45,9 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `created_date`, `modify_date`, `created_by`, `modify_by`) VALUES
-(1, 'admin', '$2y$10$wpUawWt8eCOmOyKwPe38HOqDMx5x5ab3RamNvO5JRYYcRPARVPWGC', 'admin_gudang', '2021-05-18', NULL, '1', NULL);
+INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `namaLengkap`, `email`, `created_date`, `modify_date`, `created_by`, `modify_by`) VALUES
+(1, 'admin', '$2y$10$wpUawWt8eCOmOyKwPe38HOqDMx5x5ab3RamNvO5JRYYcRPARVPWGC', 'admin_gudang', '', '', '2021-05-18', NULL, '1', NULL),
+(2, 'bagassetia', '$2y$10$W3msOcjyKGl4yzOjiI/dI.VnkcCjbxkujz2mYLO60.lgeDnzVvlWm', 'admin_gudang', 'M. Bagas Setia Permana', 'bagassetia271@gmail.com', '2021-05-18', NULL, '1', NULL);
 
 --
 -- Indexes for dumped tables
@@ -64,7 +67,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -12,6 +12,11 @@ class Login extends CI_Controller {
         $data = $this->UserModel->login();
         if ($data) {
           if (password_verify($this->input->post('password'), $data['password'])) {
+            $this->session->set_userdata([
+              'username'  => $data['username'],
+              'role'      => $data['role'],
+              'id_user'   => $data['id_user']
+            ]);
             switch ($data['role']) {
               case 'admin_gudang':
                 redirect('admin_gudang.html');
