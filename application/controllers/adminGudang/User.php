@@ -31,7 +31,6 @@ class User extends CI_Controller {
             </button>
           </div>
         ');
-        redirect('admin_gudang/manajemen_user.html');
       }
     }
     $data['konten'] = 'adminGudang/user';

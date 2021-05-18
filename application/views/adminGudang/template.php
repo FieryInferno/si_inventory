@@ -89,6 +89,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="<?= base_url(); ?>admin_gudang/stok_barang.html" class="nav-link">
+                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
+                <p>
+                  Stok Barang
+                </p>
+              </a>
+            </li>
             <!-- <li class="nav-item has-treeview">
               <a  class="nav-link">
                 <i class="nav-icon fas fa-copy" style="color :#339af0;"></i>
