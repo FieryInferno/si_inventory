@@ -17,13 +17,12 @@ class BarangMasukModel extends CI_Model {
   public function insert()
   {
     $this->db->insert($this->table, [
-      'kode_barang'   => $this->input->post('kode_barang'),
-      'nama_barang'   => $this->input->post('nama_barang'),
-      'kategori'      => $this->input->post('kategori'),
-      'qty'           => $this->input->post('qty'),
-      'satuan'        => $this->input->post('satuan'),
-      'created_date'  => date('Y-m-d'),
-      'created_by'    => $this->session->id_user
+      'id_barang'           => $this->input->post('id_barang'),
+      'tanggal_masuk'       => $this->input->post('tanggal_masuk'),
+      'tanggal_kadaluwarsa' => $this->input->post('tanggal_kadaluwarsa'),
+      'qty'                 => $this->input->post('qty'),
+      'created_date'        => date('Y-m-d'),
+      'created_by'          => $this->session->id_user
     ]);
   }
 

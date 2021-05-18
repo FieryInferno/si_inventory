@@ -21,6 +21,7 @@
           <a class="btn btn-success" href="<?= base_url(); ?>admin_gudang/stok_barang/tambah.html">Tambah</a>
         </div>
         <div class="card-body">
+          <?php if ($this->session->pesan) echo $this->session->pesan; ?>
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTables-example">
               <thead>
