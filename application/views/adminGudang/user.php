@@ -89,12 +89,12 @@
                       <td><?= $key['namaLengkap']; ?></td>
                       <td><?= $key['role']; ?></td>
                       <td><?= $key['created_date']; ?></td>
-                      <td><?= $key['created_by']; ?></td>
+                      <td><?= $key['user_create']; ?></td>
                       <td><?= $key['modify_date']; ?></td>
-                      <td><?= $key['modify_by']; ?></td>
+                      <td><?= $key['user_modify']; ?></td>
                       <td>
-                        <button class="btn btn-primary">Edit</button>
-                        <button class="btn btn-danger">Hapus</button>
+                        <a class="btn btn-primary" href="<?= base_url('admin_gudang/manajemen_user/' . $key['id_user']); ?>">Edit</a>
+                        <a class="btn btn-danger" href="<?= base_url('admin_gudang/manajemen_user/hapus/' . $key['id_user']); ?>">Hapus</a>
                       </td>
                     </tr>
                   <?php }
