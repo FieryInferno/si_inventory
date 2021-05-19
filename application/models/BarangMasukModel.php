@@ -33,18 +33,17 @@ class BarangMasukModel extends CI_Model {
     ])->row_array();
   }
 
-  public function update($id_barang)
+  public function update($id_barang_masuk)
   {
     $data = [
-      'kode_barang'   => $this->input->post('kode_barang'),
-      'nama_barang'   => $this->input->post('nama_barang'),
-      'kategori'      => $this->input->post('kategori'),
-      'qty'           => $this->input->post('qty'),
-      'satuan'        => $this->input->post('satuan'),
-      'modify_date'   => date('Y-m-d'),
-      'modify_by'     => $this->session->id_user
+      'id_barang'           => $this->input->post('id_barang'),
+      'tanggal_masuk'       => $this->input->post('tanggal_masuk'),
+      'tanggal_kadaluwarsa' => $this->input->post('tanggal_kadaluwarsa'),
+      'qty'                 => $this->input->post('qty'),
+      'modify_date'         => date('Y-m-d'),
+      'modify_by'           => $this->session->id_user
     ];
-    $this->db->where('id_barang', $id_barang);
+    $this->db->where('id_barang_masuk', $id_barang_masuk);
     $this->db->update($this->table, $data);
   }
 
