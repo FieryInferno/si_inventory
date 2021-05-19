@@ -42,9 +42,9 @@ class KategoriModel extends CI_Model {
     $this->db->update($this->table, $data);
   }
 
-  public function delete($id_barang_keluar)
+  public function delete($id_kategori)
   {
-    $this->db->where('id_barang_keluar', $id_barang_keluar);
+    $this->db->where('id_kategori', $id_kategori);
     $this->db->delete($this->table);
   }
 }
