@@ -23,23 +23,22 @@ class KategoriModel extends CI_Model {
     ]);
   }
 
-  public function get($id_barang_keluar)
+  public function get($id_kategori)
   {
     return $this->db->get_where($this->table, [
-      'id_barang_keluar' => $id_barang_keluar
+      'id_kategori' => $id_kategori
     ])->row_array();
   }
 
-  public function update($id_barang_keluar)
+  public function update($id_kategori)
   {
     $data = [
-      'id_barang'       => $this->input->post('id_barang'),
-      'tanggal_keluar'  => $this->input->post('tanggal_keluar'),
-      'qty'             => $this->input->post('qty'),
-      'modify_date'     => date('Y-m-d'),
-      'modify_by'       => $this->session->id_user
+      'kode'          => $this->input->post('kode_kategori'),
+      'nama'          => $this->input->post('nama_kategori'),
+      'modify_date'   => date('Y-m-d'),
+      'modify_by'     => $this->session->id_user
     ];
-    $this->db->where('id_barang_keluar', $id_barang_keluar);
+    $this->db->where('id_kategori', $id_kategori);
     $this->db->update($this->table, $data);
   }
 
