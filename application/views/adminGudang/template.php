@@ -101,7 +101,15 @@
               <a href="<?= base_url(); ?>admin_gudang/barang_masuk.html" class="nav-link">
                 <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
                 <p>
-                  Barang masuk
+                  Barang Masuk
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= base_url(); ?>admin_gudang/barang_keluar.html" class="nav-link">
+                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
+                <p>
+                  Barang Keluar
                 </p>
               </a>
             </li>
