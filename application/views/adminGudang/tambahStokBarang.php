@@ -36,7 +36,14 @@
             <div class="form-group row">
               <label for="staticEmail" class="col-sm-2 col-form-label">Kategori</label>
               <div class="col-sm-10">
-                <input type="text" required class="form-control" id="staticEmail" placeholder="Masukan Kategori" name="kategori">
+                <select name="kategori" id="kategori" class="form-control" required>
+                  <option>Pilih Kategori</option>
+                  <?php
+                    foreach ($kategori as $key) {
+                      echo '<option value="' . $key['id_kategori'] . '">' . $key['kode'] . '</option>';
+                    }
+                  ?>
+                </select>
               </div>
             </div>
             <div class="form-group row">

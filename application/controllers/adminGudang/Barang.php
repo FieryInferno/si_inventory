@@ -5,8 +5,8 @@ class Barang extends CI_Controller {
   
 	public function index()
 	{
-    $data['konten'] = 'adminGudang/stokBarang';
-    $data['barang'] = $this->BarangModel->getAll();
+    $data['konten']   = 'adminGudang/stokBarang';
+    $data['barang']   = $this->BarangModel->getAll();
 		$this->load->view('adminGudang/template', $data);
 	}
 
@@ -41,6 +41,7 @@ class Barang extends CI_Controller {
       }
     }
     $data['konten'] = 'adminGudang/tambahStokBarang';
+    $data['kategori'] = $this->KategoriModel->getAll();
 		$this->load->view('adminGudang/template', $data);
   }
 
@@ -76,6 +77,7 @@ class Barang extends CI_Controller {
     }
     $data           = $this->BarangModel->get($id_barang);
     $data['konten'] = 'adminGudang/editStokBarang';
+    $data['id_kategori'] = $this->KategoriModel->getAll();
 		$this->load->view('adminGudang/template', $data);
   }
 

@@ -7,9 +7,10 @@ class BarangModel extends CI_Model {
   
 	public function getAll()
 	{
-    $this->db->select($this->table . '.*, user1.username as user_create, user2.username as user_modify');
+    $this->db->select($this->table . '.*, user1.username as user_create, user2.username as user_modify, kategori.nama as nama_kategori');
     $this->db->join('user as user1', $this->table . '.created_by = user1.id_user');
     $this->db->join('user as user2', $this->table . '.modify_by = user2.id_user', 'left');
+    $this->db->join('kategori', $this->table . '.kategori = kategori.id_kategori');
     return $this->db->get($this->table)->result_array();
 	}
 

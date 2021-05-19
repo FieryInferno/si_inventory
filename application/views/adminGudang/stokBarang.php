@@ -47,7 +47,7 @@
                       <td><?= $no++; ?></td>
                       <td><?= $key['kode_barang']; ?></td>
                       <td><?= $key['nama_barang']; ?></td>
-                      <td><?= $key['kategori']; ?></td>
+                      <td><?= $key['nama_kategori']; ?></td>
                       <td><?= $key['qty']; ?></td>
                       <td><?= $key['satuan']; ?></td>
                       <td><?= $key['created_date']; ?></td>
