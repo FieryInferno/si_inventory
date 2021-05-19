@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Bulan Mei 2021 pada 18.57
+-- Waktu pembuatan: 19 Bulan Mei 2021 pada 07.43
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 7.2.5
 
@@ -25,6 +25,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `barang_keluar`
+--
+
+CREATE TABLE `barang_keluar` (
+  `id_barang_keluar` int(11) NOT NULL,
+  `id_barang` int(11) NOT NULL,
+  `tanggal_keluar` date NOT NULL,
+  `qty` int(191) NOT NULL,
+  `created_date` date DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `modify_date` date DEFAULT NULL,
+  `modify_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `barang_masuk`
 --
 
@@ -40,12 +57,28 @@ CREATE TABLE `barang_masuk` (
   `modify_by` int(191) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data untuk tabel `barang_masuk`
+-- Struktur dari tabel `kategori`
 --
 
-INSERT INTO `barang_masuk` (`id_barang_masuk`, `id_barang`, `tanggal_masuk`, `qty`, `tanggal_kadaluwarsa`, `created_date`, `created_by`, `modify_date`, `modify_by`) VALUES
-(1, 3, '2021-05-18', 12, '2021-05-31', '2021-05-18', 1, NULL, NULL);
+CREATE TABLE `kategori` (
+  `id_kategori` int(11) NOT NULL,
+  `kode` varchar(191) NOT NULL,
+  `nama` varchar(191) NOT NULL,
+  `created_date` date DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `modify_date` date DEFAULT NULL,
+  `modify_by` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`id_kategori`, `kode`, `nama`, `created_date`, `created_by`, `modify_date`, `modify_by`) VALUES
+(2, 'K1', 'kategori1', '2021-05-19', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -71,7 +104,7 @@ CREATE TABLE `stok_barang` (
 --
 
 INSERT INTO `stok_barang` (`id_barang`, `kode_barang`, `nama_barang`, `kategori`, `qty`, `satuan`, `created_by`, `modify_by`, `created_date`, `modify_date`) VALUES
-(3, 'KB1', 'obat', 'keras', 12, 'strip', '1', NULL, '2021-05-18', NULL);
+(5, 'KB1', 'obat', '2', 12, 'strip', '1', '1', '2021-05-19', '2021-05-19');
 
 -- --------------------------------------------------------
 
@@ -105,10 +138,25 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `namaLengkap`, `e
 --
 
 --
+-- Indeks untuk tabel `barang_keluar`
+--
+ALTER TABLE `barang_keluar`
+  ADD PRIMARY KEY (`id_barang_keluar`),
+  ADD KEY `id_barang` (`id_barang`),
+  ADD KEY `barang_keluar_ibfk_2` (`created_by`),
+  ADD KEY `modify_by` (`modify_by`);
+
+--
 -- Indeks untuk tabel `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   ADD PRIMARY KEY (`id_barang_masuk`);
+
+--
+-- Indeks untuk tabel `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id_kategori`);
 
 --
 -- Indeks untuk tabel `stok_barang`
@@ -127,22 +175,46 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `barang_keluar`
+--
+ALTER TABLE `barang_keluar`
+  MODIFY `id_barang_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `barang_masuk`
 --
 ALTER TABLE `barang_masuk`
   MODIFY `id_barang_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `stok_barang`
 --
 ALTER TABLE `stok_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `barang_keluar`
+--
+ALTER TABLE `barang_keluar`
+  ADD CONSTRAINT `barang_keluar_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `stok_barang` (`id_barang`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `barang_keluar_ibfk_2` FOREIGN KEY (`created_by`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `barang_keluar_ibfk_3` FOREIGN KEY (`modify_by`) REFERENCES `user` (`id_user`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
