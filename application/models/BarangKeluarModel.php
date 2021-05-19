@@ -25,24 +25,23 @@ class BarangKeluarModel extends CI_Model {
     ]);
   }
 
-  public function get($id_barang_masuk)
+  public function get($id_barang_keluar)
   {
     return $this->db->get_where($this->table, [
-      'id_barang_masuk' => $id_barang_masuk
+      'id_barang_keluar' => $id_barang_keluar
     ])->row_array();
   }
 
-  public function update($id_barang_masuk)
+  public function update($id_barang_keluar)
   {
     $data = [
-      'id_barang'           => $this->input->post('id_barang'),
-      'tanggal_masuk'       => $this->input->post('tanggal_masuk'),
-      'tanggal_kadaluwarsa' => $this->input->post('tanggal_kadaluwarsa'),
-      'qty'                 => $this->input->post('qty'),
-      'modify_date'         => date('Y-m-d'),
-      'modify_by'           => $this->session->id_user
+      'id_barang'       => $this->input->post('id_barang'),
+      'tanggal_keluar'  => $this->input->post('tanggal_keluar'),
+      'qty'             => $this->input->post('qty'),
+      'modify_date'     => date('Y-m-d'),
+      'modify_by'       => $this->session->id_user
     ];
-    $this->db->where('id_barang_masuk', $id_barang_masuk);
+    $this->db->where('id_barang_keluar', $id_barang_keluar);
     $this->db->update($this->table, $data);
   }
 

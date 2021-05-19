@@ -59,8 +59,8 @@
                       <td><?= $key['modify_date']; ?></td>
                       <td><?= $key['user_modify']; ?></td>
                       <td>
-                        <a class="btn btn-primary" href="<?= base_url('admin_gudang/barang_masuk/edit/' . $key['id_barang']); ?>">Edit</a>
-                        <a class="btn btn-danger" href="<?= base_url('admin_gudang/barang_masuk/hapus/' . $key['id_barang']); ?>">Hapus</a>
+                        <a class="btn btn-primary" href="<?= base_url('admin_gudang/barang_masuk/edit/' . $key['id_barang_masuk']); ?>">Edit</a>
+                        <a class="btn btn-danger" href="<?= base_url('admin_gudang/barang_masuk/hapus/' . $key['id_barang_masuk']); ?>">Hapus</a>
                       </td>
                     </tr>
                   <?php }
