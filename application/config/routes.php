@@ -24,3 +24,6 @@ $route['admin_gudang/barang_keluar.html']           = 'adminGudang/BarangKeluar'
 $route['admin_gudang/barang_keluar/tambah.html']    = 'adminGudang/BarangKeluar/tambah';
 $route['admin_gudang/barang_keluar/edit/(:any)']    = 'adminGudang/BarangKeluar/edit/$1';
 $route['admin_gudang/barang_keluar/hapus/(:any)']   = 'adminGudang/BarangKeluar/hapus/$1';
+$route['admin_gudang/kategori.html']                = 'adminGudang/Kategori';
+$route['admin_gudang/kategori/edit/(:any)']         = 'adminGudang/Kategori/edit/$1';
+$route['admin_gudang/kategori/hapus/(:any)']        = 'adminGudang/Kategori/hapus/$1';

@@ -7,4 +7,4 @@ $autoload['drivers']    = array();
 $autoload['helper']     = array('url', 'form');
 $autoload['config']     = array();
 $autoload['language']   = array();
-$autoload['model']      = array('UserModel', 'BarangModel', 'BarangMasukModel', 'BarangKeluarModel');
+$autoload['model']      = array('UserModel', 'BarangModel', 'BarangMasukModel', 'BarangKeluarModel', 'KategoriModel');

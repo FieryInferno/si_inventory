@@ -90,6 +90,14 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="<?= base_url(); ?>admin_gudang/kategori.html" class="nav-link">
+                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
+                <p>
+                  Kategori
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="<?= base_url(); ?>admin_gudang/stok_barang.html" class="nav-link">
                 <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
                 <p>
