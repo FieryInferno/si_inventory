@@ -77,9 +77,9 @@ class BarangKeluar extends CI_Controller {
 		$this->load->view('adminGudang/template', $data);
   }
 
-  public function hapus($id_barang_masuk)
+  public function hapus($id_barang_keluar)
   {
-    $this->BarangMasukModel->delete($id_barang_masuk);
+    $this->BarangKeluarModel->delete($id_barang_keluar);
     $this->session->set_flashdata('pesan', '
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Sukses!</strong> Hapus data berhasil.
@@ -88,6 +88,6 @@ class BarangKeluar extends CI_Controller {
         </button>
       </div>
     ');
-    redirect('admin_gudang/barang_masuk.html');
+    redirect('admin_gudang/barang_keluar.html');
   }
 }

@@ -45,9 +45,9 @@ class BarangKeluarModel extends CI_Model {
     $this->db->update($this->table, $data);
   }
 
-  public function delete($id_barang_masuk)
+  public function delete($id_barang_keluar)
   {
-    $this->db->where('id_barang_masuk', $id_barang_masuk);
+    $this->db->where('id_barang_keluar', $id_barang_keluar);
     $this->db->delete($this->table);
   }
 }
