@@ -32,6 +32,7 @@
                   <th>Kategori</th>
                   <th>QTY</th>
                   <th>Satuan</th>
+                  <th>Harga</th>
                   <th>Created Date</th>
                   <th>Created By</th>
                   <th>Modify Date</th>
@@ -50,6 +51,7 @@
                       <td><?= $key['nama_kategori']; ?></td>
                       <td><?= $key['qty']; ?></td>
                       <td><?= $key['satuan']; ?></td>
+                      <td><?= "Rp " . number_format($key['harga'], 2, ',', '.'); ?></td>
                       <td><?= $key['created_date']; ?></td>
                       <td><?= $key['user_create']; ?></td>
                       <td><?= $key['modify_date']; ?></td>

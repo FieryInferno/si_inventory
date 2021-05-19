@@ -22,6 +22,7 @@ class BarangModel extends CI_Model {
       'kategori'      => $this->input->post('kategori'),
       'qty'           => $this->input->post('qty'),
       'satuan'        => $this->input->post('satuan'),
+      'harga'         => $this->input->post('harga'),
       'created_date'  => date('Y-m-d'),
       'created_by'    => $this->session->id_user
     ]);
@@ -42,6 +43,7 @@ class BarangModel extends CI_Model {
       'kategori'      => $this->input->post('kategori'),
       'qty'           => $this->input->post('qty'),
       'satuan'        => $this->input->post('satuan'),
+      'harga'         => $this->input->post('harga'),
       'modify_date'   => date('Y-m-d'),
       'modify_by'     => $this->session->id_user
     ];

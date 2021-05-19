@@ -64,6 +64,12 @@
               </div>
             </div>
             <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Harga</label>
+              <div class="col-sm-10">
+                <input type="number" required class="form-control" id="staticEmail" placeholder="Masukan Harga" name="harga">
+              </div>
+            </div>
+            <div class="form-group row">
               <button type="submit" class="btn btn-success">Simpan</button>
               <a href="<?= base_url(); ?>admin_gudang/stok_barang.html" class="btn btn-danger">Batal</a>
             </div>

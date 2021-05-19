@@ -18,6 +18,7 @@ class Barang extends CI_Controller {
       $this->form_validation->set_rules('kategori', 'Kategori', 'required');
       $this->form_validation->set_rules('qty', 'QTY', 'required');
       $this->form_validation->set_rules('satuan', 'Satuan', 'required');
+      $this->form_validation->set_rules('harga', 'Harga', 'required');
       if ($this->form_validation->run() !== FALSE) {
         $this->BarangModel->insert();
         $this->session->set_flashdata('pesan', '
@@ -53,6 +54,7 @@ class Barang extends CI_Controller {
       $this->form_validation->set_rules('kategori', 'Kategori', 'required');
       $this->form_validation->set_rules('qty', 'QTY', 'required');
       $this->form_validation->set_rules('satuan', 'Satuan', 'required');
+      $this->form_validation->set_rules('harga', 'Harga', 'required');
       if ($this->form_validation->run() !== FALSE) {
         $this->BarangModel->update($id_barang);
         $this->session->set_flashdata('pesan', '

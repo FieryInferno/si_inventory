@@ -82,74 +82,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url(); ?>admin_gudang/manajemen_user.html" class="nav-link">
-                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
+              <a href="<?= base_url(); ?>" class="nav-link">
+                <i class="nav-icon fas fa-home" style="color :#339af0;"></i>
                 <p>
-                  Manajemen User
+                  L
                 </p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="<?= base_url(); ?>admin_gudang/kategori.html" class="nav-link">
-                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
-                <p>
-                  Kategori
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url(); ?>admin_gudang/stok_barang.html" class="nav-link">
-                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
-                <p>
-                  Stok Barang
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url(); ?>admin_gudang/barang_masuk.html" class="nav-link">
-                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
-                <p>
-                  Barang Masuk
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="<?= base_url(); ?>admin_gudang/barang_keluar.html" class="nav-link">
-                <i class="nav-icon fas fa-user" style="color :#339af0;"></i>
-                <p>
-                  Barang Keluar
-                </p>
-              </a>
-            </li>
-            <!-- <li class="nav-item has-treeview">
-              <a  class="nav-link">
-                <i class="nav-icon fas fa-copy" style="color :#339af0;"></i>
-                <p>
-                  Data Master
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo base_url()."index.php/Admin/Admin/tabel_pegawai"?>" class="nav-link">
-                    <i class="fas fa-users" style="color :#339af0;"></i>
-                    <p>Pegawai</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo base_url()."index.php/Admin/Admin/tabel_jabatan"?>" class="nav-link">
-                    <i class="fas fa-filter " style="color :#339af0;"></i>
-                    <p>Jabatan</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo base_url()."index.php/Admin/Admin/tabel_golongan"?>" class="nav-link">
-                    <i class="fas fa-inbox" style="color :#339af0;" ></i>
-                    <p>Golongan</p>
-                  </a>
-                </li>
-              </ul>
-            </li> -->
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
