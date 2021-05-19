@@ -56,4 +56,20 @@ class BarangModel extends CI_Model {
     $this->db->where('id_barang', $id_barang);
     $this->db->delete($this->table);
   }
+
+  public function getLaporan()
+  {
+    $data = $this->db->get_where($this->table)->result_array();
+    for ($i=0; $i < count($data); $i++) { 
+      $key            = $data[$i];
+      $barang_keluar  = $this->db->get_where('barang_keluar', [
+        'id_barang' => $key['id_barang']
+      ])->result_array();
+      $data[$i]['total_barang_keluar']  = 0; 
+      foreach ($barang_keluar as $value) {
+        $data[$i]['total_barang_keluar']  += $value['qty'];
+      }
+    }
+    return $data;
+  }
 }
