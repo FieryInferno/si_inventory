@@ -28,5 +28,6 @@ $route['admin_gudang/kategori.html']                = 'adminGudang/Kategori';
 $route['admin_gudang/kategori/edit/(:any)']         = 'adminGudang/Kategori/edit/$1';
 $route['admin_gudang/kategori/hapus/(:any)']        = 'adminGudang/Kategori/hapus/$1';
 
-$route['manager.html']      = 'manager/manager';
-$route['manager/pdf.html']  = 'manager/manager/pdf';
+$route['manager.html']        = 'manager/manager';
+$route['manager/pdf.html']    = 'manager/manager/pdf';
+$route['manager/excel.html']  = 'manager/manager/excel';
