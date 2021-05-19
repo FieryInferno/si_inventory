@@ -78,4 +78,18 @@ class BarangMasuk extends CI_Controller {
     $data['barang'] = $this->BarangModel->getAll();
 		$this->load->view('adminGudang/template', $data);
   }
+
+  public function hapus($id_barang_masuk)
+  {
+    $this->BarangMasukModel->delete($id_barang_masuk);
+    $this->session->set_flashdata('pesan', '
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Sukses!</strong> Hapus data berhasil.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    ');
+    redirect('admin_gudang/barang_masuk.html');
+  }
 }

@@ -26,10 +26,10 @@ class BarangMasukModel extends CI_Model {
     ]);
   }
 
-  public function get($id_barang)
+  public function get($id_barang_masuk)
   {
     return $this->db->get_where($this->table, [
-      'id_barang' => $id_barang
+      'id_barang_masuk' => $id_barang_masuk
     ])->row_array();
   }
 
@@ -47,9 +47,9 @@ class BarangMasukModel extends CI_Model {
     $this->db->update($this->table, $data);
   }
 
-  public function delete($id_barang)
+  public function delete($id_barang_masuk)
   {
-    $this->db->where('id_barang', $id_barang);
+    $this->db->where('id_barang_masuk', $id_barang_masuk);
     $this->db->delete($this->table);
   }
 }
