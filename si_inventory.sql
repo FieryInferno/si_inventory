@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Bulan Mei 2021 pada 07.43
+-- Waktu pembuatan: 19 Bulan Mei 2021 pada 17.24
 -- Versi server: 10.1.32-MariaDB
 -- Versi PHP: 7.2.5
 
@@ -96,15 +96,17 @@ CREATE TABLE `stok_barang` (
   `created_by` varchar(191) DEFAULT NULL,
   `modify_by` varchar(191) DEFAULT NULL,
   `created_date` date DEFAULT NULL,
-  `modify_date` date DEFAULT NULL
+  `modify_date` date DEFAULT NULL,
+  `harga` int(191) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `stok_barang`
 --
 
-INSERT INTO `stok_barang` (`id_barang`, `kode_barang`, `nama_barang`, `kategori`, `qty`, `satuan`, `created_by`, `modify_by`, `created_date`, `modify_date`) VALUES
-(5, 'KB1', 'obat', '2', 12, 'strip', '1', '1', '2021-05-19', '2021-05-19');
+INSERT INTO `stok_barang` (`id_barang`, `kode_barang`, `nama_barang`, `kategori`, `qty`, `satuan`, `created_by`, `modify_by`, `created_date`, `modify_date`, `harga`) VALUES
+(5, 'KB1', 'obat', '2', 12, 'strip', '1', '1', '2021-05-19', '2021-05-19', 20000),
+(6, 'KB1', 'obat', '2', 12, 'strip', '1', NULL, '2021-05-19', NULL, 10000);
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `namaLengkap`, `email`, `created_date`, `modify_date`, `created_by`, `modify_by`) VALUES
 (1, 'admin', '$2y$10$wpUawWt8eCOmOyKwPe38HOqDMx5x5ab3RamNvO5JRYYcRPARVPWGC', 'admin_gudang', 'M. Bagas Setia', 'setiapermanabagas@gmail.com', '2021-05-18', '2021-05-18', '1', '1'),
-(3, 'bagassetia', '$2y$10$qtEFCi3tiOFERjOKTtkUS.6tGZbizQ1TuBweyUVfDTC6kR6S8ZsB.', 'admin_gudang', 'M. Bagas Setia Permana', 'bagassetia271@gmail.com', '2021-05-18', NULL, '1', NULL);
+(3, 'bagassetia', '$2y$10$qtEFCi3tiOFERjOKTtkUS.6tGZbizQ1TuBweyUVfDTC6kR6S8ZsB.', 'admin_gudang', 'M. Bagas Setia Permana', 'bagassetia271@gmail.com', '2021-05-18', NULL, '1', NULL),
+(4, 'manager', '$2y$10$cDiYQftuO7OenQQURM9rJOfrO2Ew.EtbvtRD7VDgHYlc8goVZlbUi', 'manager', 'manager', 'fieryinferno33@gmail.com', '2021-05-19', NULL, '1', NULL);
 
 --
 -- Indexes for dumped tables
@@ -196,13 +199,13 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT untuk tabel `stok_barang`
 --
 ALTER TABLE `stok_barang`
-  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
